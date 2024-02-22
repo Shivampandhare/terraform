@@ -11,7 +11,7 @@ resource "aws_launch_template" "temp"{
     vpc_security_group_ids     = "sg-0d816d31c26401c48"
     key_name = var.keypair
     version = "$Latest"
-    user_data = filebase64("${path.module}/app.sh")
+    user_data = filebase64("./app.sh")
     ebs_optimized              = true
     update_default_version     = true
     network_interfaces {
