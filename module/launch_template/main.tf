@@ -8,13 +8,13 @@ resource "aws_launch_template" "temp"{
     description = "My Launch Template"
     image_id = var.image_id
     instance_type = var.instance_type    
-    vpc_security_group_ids     = ["sg-0d816d31c26401c48"]
     key_name = var.keypair
     user_data = filebase64("./app.sh")
     ebs_optimized              = true
     update_default_version     = true
     network_interfaces {
             associate_public_ip_address = true
+            security_groups      = ["sg-0d816d31c26401c48"]
         }
     block_device_mappings {
     device_name = "/dev/sda1"
