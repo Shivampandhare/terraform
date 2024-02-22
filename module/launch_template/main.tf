@@ -1,12 +1,13 @@
 variable "image_id" {}
 variable "instance_type" {}
-
+variable "keypair" {}
 
 resource "aws_launch_template" "temp"{
     name = "my-launch-template"
     description = "My Launch Template"
     image_id = var.image_id
-    instance_type = var.instance_type    
+    instance_type = var.instance_type  
+    key_name = var.keypair
     user_data = filebase64("./app.sh")
     ebs_optimized              = true
     update_default_version     = true
