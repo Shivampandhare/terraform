@@ -5,7 +5,7 @@ provider "aws" {
 module "launch_template" {
     source                     = "./module/launch_template/"
     image_id                   = "ami-06b72b3b2a773be2b"
-    instance_type              = "t2.micro"
+    instance_type              = "t3.micro"
     keypair                    = "key"
 }
 
