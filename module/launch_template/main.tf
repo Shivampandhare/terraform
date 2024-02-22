@@ -8,9 +8,8 @@ resource "aws_launch_template" "temp"{
     description = "My Launch Template"
     image_id = var.image_id
     instance_type = var.instance_type    
-    vpc_security_group_ids     = "sg-0d816d31c26401c48"
+    vpc_security_group_ids     = ["sg-0d816d31c26401c48"]
     key_name = var.keypair
-    version = "$Latest"
     user_data = filebase64("./app.sh")
     ebs_optimized              = true
     update_default_version     = true
