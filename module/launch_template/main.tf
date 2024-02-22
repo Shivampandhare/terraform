@@ -38,9 +38,9 @@ resource "aws_launch_template" "temp"{
 }
 
 output "temp_id" {
-    value  = launch_template.temp.id
+    value  = aws_launch_template.temp.id
 }
 
 output "version_latest" {
-    value = launch_template.temp.latest_version
+    value = aws_launch_template.temp.latest_version
 }
