@@ -13,7 +13,7 @@ resource "aws_autoscaling_group" "asg" {
   health_check_grace_period = 300
   launch_template {
     id          = var.id
-    version     = var.version
+    version     = var.version_latest
   }
   instance_refresh {
     strategy = "Rolling"
