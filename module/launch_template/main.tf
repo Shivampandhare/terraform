@@ -41,6 +41,6 @@ output "temp_id" {
     value  = launch_template.temp.id
 }
 
-output "version" {
+output "version_latest" {
     value = launch_template.temp.latest_version
 }
