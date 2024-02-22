@@ -41,6 +41,6 @@ resource "aws_autoscaling_policy" "avg_cpu_policy" {
 }
 resource "aws_placement_group" "test" {
   name     = "test"
-  strategy = "spread"
+  strategy = "spread"  ##for thid strategy t2.micro is not supported
 }
 
