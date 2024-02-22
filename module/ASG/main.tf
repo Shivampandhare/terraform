@@ -7,6 +7,7 @@ resource "aws_autoscaling_group" "asg" {
   desired_capacity          = 2
   max_size                  = 4
   min_size                  = 2
+  placement_group           = aws_placement_group.test.id
   vpc_zone_identifier       =["subnet-0eec4a2c46ae78670","subnet-0aea4844b4f6561ec"]
   target_group_arns         = [var.target_group_arns]
   health_check_type         = "EC2"
@@ -37,5 +38,9 @@ resource "aws_autoscaling_policy" "avg_cpu_policy" {
     }
     target_value = 30.0
   }  
-
 }
+resource "aws_placement_group" "test" {
+  name     = "test"
+  strategy = "spread"
+}
+
