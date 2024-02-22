@@ -16,6 +16,6 @@ module "lb" {
 module "asg" {
     source                     = "./module/ASG/"
     id                         = module.launch_template.temp_id
-    version                    = module.launch_template.version_latest
+    version_latest             = module.launch_template.version_latest
     target_group_arns          = module.lb.target_group_arns
 }
