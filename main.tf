@@ -6,7 +6,7 @@ module "launch_template" {
     source                     = "./module/launch_template/"
     image_id                   = "ami-06b72b3b2a773be2b"
     instance_type              = "t2.micro"
-    keypair                    = "key.pem"
+    keypair                    = "key"
 }
 
 module "lb" {
