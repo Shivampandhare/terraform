@@ -3,7 +3,7 @@ variable "instance_type" {}
 variable "keypair" {}
 
 
-resource "launch_template" "temp"{
+resource "aws_launch_template" "temp"{
     name = "my-launch-template"
     description = "My Launch Template"
     image_id = var.image_id
