@@ -3,7 +3,7 @@ variable "id" {}
 variable "version_latest" {}
 
 resource "aws_autoscaling_group" "asg" {
-  Name                      = "myasg-"
+  name                      = "myasg-"
   desired_capacity          = 2
   max_size                  = 4
   min_size                  = 2
