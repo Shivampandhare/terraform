@@ -1,6 +1,6 @@
 variable "target_group_arns" {}
 variable "id" {}
-variable "version" {}
+variable "version_latest" {}
 
 resource "aws_autoscaling_group" "asg" {
   name_prefix               = "myasg-"
