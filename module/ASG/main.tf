@@ -8,7 +8,7 @@ resource "aws_autoscaling_group" "asg" {
   max_size                  = 4
   min_size                  = 2
   vpc_zone_identifier       =["subnet-0eec4a2c46ae78670","subnet-0aea4844b4f6561ec"]
-  target_group_arns         = var.target_group_arns
+  target_group_arns         = [var.target_group_arns]
   health_check_type         = "EC2"
   health_check_grace_period = 300
   launch_template {
